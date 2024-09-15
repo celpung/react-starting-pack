@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Poppins", sans-serif;
+  background-color: #e9e7e3;
+  --primary-color: #00094c;
+  --primary-color-hover: #49518a;
+  --secondary-color: #0b4f9c;
+  --secondary-color-hover: #45678d;
+  --success-color: #03942a;
+  --success-color-hover: #559e69;
+  --info-color: #0798b5;
+  --info-color-hover: #138496;
+  --warning-color: #fd7e14;
+  --warning-color-hover: #e86000;
+  --danger-color: #b51307;
+  --danger-color-hover: #9b5b57;
+  --black-color: #252729;
+  --black-color-hover: #424d58;
+  --disable-color: #6c757d;
+  --disable-color-hover: #5a6268;
+  --link-color: #4299e1;
+}
+
+/* text properties */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-info {
+  color: var(--info-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* background color */
+.bg-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-success {
+  background-color: var(--success-color);
+  color: #fff;
+}
+
+.bg-info {
+  background-color: var(--info-color);
+  color: #fff;
+}
+.bg-warning {
+  background-color: var(--warning-color);
+  color: #fff;
+}
+
+.bg-danger {
+  background-color: var(--danger-color);
+  color: #fff;
+}
