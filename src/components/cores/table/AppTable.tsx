@@ -67,7 +67,7 @@ const AppTable = <T,>({ columns, data, onScrollBottom }: AppTableProps<T>) => {
   return (
     <div ref={tableContainerRef} className="overflow-auto pb-8">
       <table className="min-w-full divide-y divide-gray-200 border">
-        <thead className="sticky top-0 z-10 bg-gray-200">
+        <thead className="sticky top-0 z-10 bg-primary text-white">
           <tr className="divide-x divide-gray-300">
             {columns.map((column, index) => (
               <th key={index} className={`px-6 py-3 text-xs font-medium uppercase tracking-wider ${column.textAlign || "text-left"}`}>

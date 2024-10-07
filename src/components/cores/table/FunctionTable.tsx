@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTrash, FaDownload, FaArrowRight, FaPlusCircle, FaEdit, FaToggleOn } from "react-icons/fa";
+import { FaDownload, FaPlusCircle, FaToggleOn } from "react-icons/fa";
 import AppTable from "./AppTable";
 import AppButtons, { AppButtonsProps } from "../button/AppButtons";
 
@@ -34,11 +34,11 @@ const FunctionTable = <T,>({
     header: "Action",
     accessor: (row: T) => (
       <div className="flex justify-center gap-1">
-        {onEdit && <AppButtons variant="info" fontSize="text-xs" onClick={() => onEdit(row)} icon={<FaEdit />} />}
-        {onDetails && <AppButtons variant="success" fontSize="text-xs" onClick={() => onDetails(row)} icon={<FaArrowRight />} />}
+        {onEdit && <AppButtons label="EDIT" variant="info" fontSize="text-xs" onClick={() => onEdit(row)} />}
+        {onDetails && <AppButtons label="DETAIL" variant="success" fontSize="text-xs" onClick={() => onDetails(row)} />}
         {/* {onCreate && <AppButtons variant="success" fontSize="text-xs" onClick={() => onCreate(row)} icon={<FaPlusCircle />} />} */}
         {onToggleStatus && <AppButtons variant="info" fontSize="text-xs" onClick={() => onToggleStatus(row)} icon={<FaToggleOn />} />}
-        {onDelete && <AppButtons variant="danger" fontSize="text-xs" onClick={() => onDelete(row)} icon={<FaTrash />} />}
+        {onDelete && <AppButtons label="HAPUS" variant="danger" fontSize="text-xs" onClick={() => onDelete(row)} />}
       </div>
     ),
     textAlign: "text-center",

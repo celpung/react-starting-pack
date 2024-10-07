@@ -7,7 +7,7 @@ export interface AppButtonsProps {
   type?: 'button' | 'submit' | 'reset';
   className?: string;
   disabled?: boolean;
-  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'info' | 'warning' | 'black' | 'disable';
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'info' | 'warning' | 'black' | 'disable' | 'outline';
   icon?: ReactNode;
   fontSize?: 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl';
 }
@@ -28,7 +28,7 @@ const AppButtons: React.FC<AppButtonsProps> = ({
     <button
       type={type}
       onClick={onClick}
-      className={`${baseStyles} ${fontSize} ${variant} ${className}`}
+      className={`${baseStyles} ${fontSize} ${variant !== "outline" ? variant : "border border-primary rounded text-primary"} ${className} w-full`}
       disabled={disabled}
     >
       {icon && <span className={label ? 'mr-2' : ''}>{icon}</span>}

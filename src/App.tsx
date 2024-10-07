@@ -1,12 +1,13 @@
+// import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Palletes from "./presentation/demo/Palletes";
-import Home from "./presentation/home/Home";
+import { RoutesData } from "./routes";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/pallete" element={<Palletes />} />
+      {RoutesData.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} />
+      ))}
     </Routes>
   );
 }

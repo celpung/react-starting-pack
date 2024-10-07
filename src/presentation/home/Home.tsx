@@ -8,7 +8,7 @@ const Home: React.FC = () => {
           <h5>React Starting pack</h5>
           <p>This is a starting pack for react</p>
           <div className="text-center">
-            <a href="/pallete">Pallete</a>
+            <a href="/palletes">Pallete</a>
           </div>
         </div>
       </div>
