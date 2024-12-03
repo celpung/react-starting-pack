@@ -5,7 +5,7 @@ import AppButtons, { AppButtonsProps } from "../button/AppButtons";
 
 interface FunctionTableProps<T> {
   title?: string | React.ReactNode;
-  column: Array<{ header: string; accessor: (row: T) => React.ReactNode; textAlign?: string; noWrap?: boolean }>;
+  column: Array<{ header: string; accessor: (row: T) => React.ReactNode; textAlign?: string; wrap?: boolean; }>;
   data: T[];
   onEdit?: (row: T) => void;
   onDelete?: (row: T) => void;
@@ -42,10 +42,19 @@ const FunctionTable = <T,>({
       </div>
     ),
     textAlign: "text-center",
+    wrap: false,
+    width: 10,
   };
 
-  const allColumns = [...column, ...(onEdit || onDelete || onDetails || onCreate || onToggleStatus ? [actionColumn] : [])];
-
+  // const allColumns = [...column, ...(onEdit || onDelete || onDetails || onCreate || onToggleStatus ? [actionColumn] : [])];
+  const allColumns = [
+    ...column.map((col) => ({
+      ...col,
+      wrap: col.wrap ?? true,
+    })),
+    ...(onEdit || onDelete || onDetails || onCreate || onToggleStatus ? [actionColumn] : []),
+  ];
+  
   return (
     <div className="h-full">
       <div className="sm:flex justify-between items-center mb-2">

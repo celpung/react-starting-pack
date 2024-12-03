@@ -32,6 +32,7 @@ interface PillProps extends BaseProps, SelectHTMLAttributes<HTMLSelectElement> {
 
 interface TextareaProps extends BaseProps, TextareaHTMLAttributes<HTMLTextAreaElement> {
   type: "textarea";
+  textareaHeight?: string | number;
 }
 
 type AppInputProps =
@@ -166,7 +167,7 @@ const AppInput: React.FC<AppInputProps> = (props) => {
             onChange={handleChange}
             disabled={disabled}
             className={`border-primary appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10 ${disabled ? "bg-gray-100 cursor-not-allowed" : ""}`}
-            style={{ height: "100px" }}
+            style={{ height: props.textareaHeight || "150px", }}
           />
         ) : (
           <input

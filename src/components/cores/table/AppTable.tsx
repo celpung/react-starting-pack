@@ -6,7 +6,7 @@ type Column<T> = {
   textAlign?: string;
   textColor?: string;
   bgColor?: string;
-  wrap?: boolean;
+  wrap: boolean;
 };
 
 type AppTableProps<T> = {
@@ -82,9 +82,7 @@ const AppTable = <T,>({ columns, data, onScrollBottom }: AppTableProps<T>) => {
               {columns.map((column, colIndex) => {
                 const cellValue = column.accessor(row);
                 const shouldApplyStyles = cellValue !== "0" && cellValue !== "" && cellValue !== null;
-                const cellClassName = `px-6 py-1 text-sm text-gray-800 ${
-                  column.textAlign || "text-left"
-                } ${column.wrap ? "" : "whitespace-nowrap"} ${shouldApplyStyles ? `${column.bgColor} ${column.textColor}` : ""}`;
+                const cellClassName = `px-6 py-1 text-sm text-gray-800 ${column.textAlign || "text-left"} ${column.wrap ? "" : "whitespace-nowrap"} ${shouldApplyStyles ? `${column.bgColor} ${column.textColor}` : ""}`;
 
                 return (
                   <td key={colIndex} className={cellClassName}>
